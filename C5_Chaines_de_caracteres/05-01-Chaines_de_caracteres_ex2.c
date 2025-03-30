@@ -15,17 +15,20 @@ int lire_ligne(char *buffer, size_t size) {
 }
 
 int missingParenthesis(char *str, size_t size) {
+    int openingCount = 0, closingCount = 0;
     for (size_t i = 0; i < size; i++) {
-        //TODO
+        if (str[i] == '(') openingCount++;
+        else if (str[i] == ')') closingCount++;
+        else if (str[i] == '\0') break;
     }
+    return !(openingCount == closingCount);
 }
 
 int main() {
     char line[100];
 
-    printf("Type some text (max %d chararcters): ", 99);
-    if (lire_ligne(line, 100)) printf("Something went wrong !\n");
-    printf("You typed:\n\"%s\"", line);
-
+    printf("[?] Saisissez une ligne de mots et parentheses (max %d carac.): ", 99);
+    if (lire_ligne(line, 100)) printf("Oups, erreur ! !\n");
+    if (missingParenthesis(line, 100)) printf("Il manque des parentheses :(\n");
     return 0;
 }
