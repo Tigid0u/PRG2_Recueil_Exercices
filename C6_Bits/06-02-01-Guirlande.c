@@ -8,19 +8,17 @@
 void afficherGuirlande(unsigned char guirlande) {
     printf("\r");
     fflush(stdout);
-    for (int i = 7; i >= 0; i--) {
-        putchar((guirlande & (1 << i)) ? '*' : '_');
+    for (int i = 0; i < 8; i++) {
+        putchar(((1 << i) & guirlande) ? '*' : '-');
     }
 }
 
 int main() {
-    unsigned char guirlande = 0b10101010;
     srand(time(NULL));
-    afficherGuirlande(guirlande);
+    unsigned char guirlande = 0b10101010;
     for (int i = 0; i < CLIGNOTEMENTS; i++) {
-        guirlande = ~guirlande;
         afficherGuirlande(guirlande);
-        usleep(rand() % 1000000);
+        guirlande = ~guirlande;
+        usleep(rand() % 500000);
     }
-    return 0;
 }
