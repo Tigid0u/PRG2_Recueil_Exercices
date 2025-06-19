@@ -23,7 +23,7 @@ Faire un test dans la fonction main(), avec les données suivantes :
 <details>
 <summary>Solution</summary>
 
-~~~
+~~~c
 
 #include <stdio.h>
 #include <stdlib.h>

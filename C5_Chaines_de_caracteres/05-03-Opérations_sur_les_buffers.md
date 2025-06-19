@@ -7,7 +7,7 @@
 ## Exercice 1
 Compléter le programme ci-après qui, dans un premier temps, invoque la fonction _moreTxt()_ pour initialiser itérativement une liste de mots dans une structure mémoire allouée dynamiquement au fur et à mesure que l'utilisateur les rentre sur _stdin_. Dans un deuxième temps, le programme invoque la fonction _makePhrase()_ qui alloue dynamiquement un buffer pour une chaîne de caractères unique composée de tous les mots rentrés séparés par un espace.
 
-~~~
+~~~c
 
 #include <stdio.h>
 #include <stdlib.h>

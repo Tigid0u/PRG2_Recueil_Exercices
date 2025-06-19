@@ -12,7 +12,7 @@ Contrairement à insChar(), insertStr()_ doit être implémentée en utilisant l
 <details>
 <summary>Solution</summary>
 
-~~~
+~~~c
 
 // insert string ins at position pos into string str
 // the resulting string cannot exceed len characters
@@ -35,7 +35,7 @@ int insertStr(char *str, int len, const char *ins, int pos) {
 
 Insertion d'un caractère avec _insertStr()_ dans le _main()_ de 05-01-Conversions.
 
-~~~
+~~~c
 
 if (insertStr(res, len + ns + 1, "\'", i + ns) < 0) {  // take into account added separators
 
